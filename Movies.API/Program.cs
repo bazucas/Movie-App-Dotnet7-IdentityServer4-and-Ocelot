@@ -8,7 +8,6 @@ builder.Services.AddDbContext<MoviesContext>(options =>
 // Add services to the container.
 
 builder.Services.AddControllers();
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
@@ -24,12 +23,11 @@ builder.Services.AddAuthentication("Bearer")
 
 builder.Services.AddAuthorization(options =>
 {
-    options.AddPolicy("ClientIdPolicy", policy => policy.RequireClaim("client_id", "movieClient", "movies_mvc_client"));
+    options.AddPolicy("ClientIdPolicy", policy =>
+        policy.RequireClaim("client_id", "movieClient", "movies_mvc_client"));
 });
 
 var app = builder.Build();
-
-SeedDatabase(app);
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
@@ -38,6 +36,8 @@ if (app.Environment.IsDevelopment())
     app.UseSwaggerUI();
     app.UseDeveloperExceptionPage();
 }
+
+SeedDatabase(app);
 
 app.UseHttpsRedirection();
 
