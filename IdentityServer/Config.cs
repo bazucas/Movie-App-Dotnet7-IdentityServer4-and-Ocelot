@@ -11,7 +11,7 @@ public class Config
     public static IEnumerable<Client> Clients =>
         new Client[]
         {
-            new()
+            new Client
             {
                 ClientId = "movieClient",
                 AllowedGrantTypes = GrantTypes.ClientCredentials,
@@ -21,7 +21,7 @@ public class Config
                 },
                 AllowedScopes = { "movieAPI" }
             },
-            new()
+            new Client
             {
                 ClientId = "movies_mvc_client",
                 ClientName = "Movies MVC Web App",
@@ -55,7 +55,7 @@ public class Config
     public static IEnumerable<ApiScope> ApiScopes =>
         new ApiScope[]
         {
-            new("movieAPI", "Movie API")
+            new ApiScope("movieAPI", "Movie API")
         };
 
     public static IEnumerable<ApiResource> ApiResources =>
@@ -65,7 +65,7 @@ public class Config
         };
 
     public static IEnumerable<IdentityResource> IdentityResources =>
-        new[]
+        new IdentityResource[]
         {
             new IdentityResources.OpenId(),
             new IdentityResources.Profile(),
@@ -83,12 +83,12 @@ public class Config
             new TestUser
             {
                 SubjectId = "5BE86359-073C-434B-AD2D-A3932222DABE",
-                Username = "luis",
+                Username = "mehmet",
                 Password = "swn",
                 Claims = new List<Claim>
                 {
-                    new Claim(JwtClaimTypes.GivenName, "luis"),
-                    new Claim(JwtClaimTypes.FamilyName, "inacio")
+                    new Claim(JwtClaimTypes.GivenName, "mehmet"),
+                    new Claim(JwtClaimTypes.FamilyName, "ozkaya")
                 }
             }
         };
