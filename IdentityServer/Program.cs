@@ -3,7 +3,6 @@ using IdentityServerHost.Quickstart.UI;
 
 var builder = WebApplication.CreateBuilder(args);
 
-
 builder.Services.AddControllersWithViews();
 
 builder.Services.AddIdentityServer()
@@ -12,6 +11,7 @@ builder.Services.AddIdentityServer()
     .AddInMemoryIdentityResources(Config.IdentityResources)
     .AddTestUsers(TestUsers.Users)
     .AddDeveloperSigningCredential();
+
 
 var app = builder.Build();
 
@@ -28,6 +28,9 @@ app.UseIdentityServer();
 
 app.UseAuthorization();
 
-app.MapControllers();
+app.MapDefaultControllerRoute(); // for mvc + api routing  
+
+//app.MapControllers(); // only for api routing
 
 app.Run();
+
