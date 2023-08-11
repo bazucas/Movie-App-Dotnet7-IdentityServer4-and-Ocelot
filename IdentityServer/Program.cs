@@ -26,12 +26,12 @@ app.UseIdentityServer();
 
 app.UseAuthorization();
 
-app.UseEndpoints(endpoints =>
-{
-    app.UseEndpoints(endpoints =>
-    {
-        endpoints.MapDefaultControllerRoute();
-    });
-});
+//app.UseEndpoints(endpoints =>
+//{
+//    endpoints.MapDefaultControllerRoute();
+//});
+
+app.MapControllers();
+
 
 app.Run();
