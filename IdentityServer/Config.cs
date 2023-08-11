@@ -83,12 +83,12 @@ public class Config
             new TestUser
             {
                 SubjectId = "5BE86359-073C-434B-AD2D-A3932222DABE",
-                Username = "mehmet",
+                Username = "luis",
                 Password = "swn",
                 Claims = new List<Claim>
                 {
-                    new Claim(JwtClaimTypes.GivenName, "mehmet"),
-                    new Claim(JwtClaimTypes.FamilyName, "ozkaya")
+                    new Claim(JwtClaimTypes.GivenName, "luis"),
+                    new Claim(JwtClaimTypes.FamilyName, "inacio")
                 }
             }
         };

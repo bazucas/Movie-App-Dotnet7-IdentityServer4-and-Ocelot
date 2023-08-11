@@ -21,17 +21,13 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseStaticFiles();
+
 app.UseRouting();
+
 app.UseIdentityServer();
 
 app.UseAuthorization();
 
-//app.UseEndpoints(endpoints =>
-//{
-//    endpoints.MapDefaultControllerRoute();
-//});
-
 app.MapControllers();
-
 
 app.Run();
