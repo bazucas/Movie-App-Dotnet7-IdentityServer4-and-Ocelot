@@ -20,7 +20,7 @@ builder.Services.AddTransient<AuthenticationDelegatingHandler>();
 
 builder.Services.AddHttpClient("MovieAPIClient", client =>
 {
-    client.BaseAddress = new Uri("https://localhost:5001/"); // 5001 for direct Movies.API service call, or 5010 for Ocelot gateway api
+    client.BaseAddress = new Uri("https://localhost:5010/"); // 5001 for direct Movies.API service call, or 5010 for Ocelot gateway api
     client.DefaultRequestHeaders.Clear();
     client.DefaultRequestHeaders.Add(HeaderNames.Accept, "application/json");
 }).AddHttpMessageHandler<AuthenticationDelegatingHandler>();

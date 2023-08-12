@@ -27,7 +27,7 @@ public class MovieApiService : IMovieApiService
 
         var request = new HttpRequestMessage(
             HttpMethod.Get,
-            "/api/movies"); // use /api/movies for direct service call or just /movies for ocelot api gateway
+            "/movies"); // use /api/movies for direct service call or just /movies for ocelot api gateway
 
         var response = await httpClient.SendAsync(
             request, HttpCompletionOption.ResponseHeadersRead).ConfigureAwait(false);
